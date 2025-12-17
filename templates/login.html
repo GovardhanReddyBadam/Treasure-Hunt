@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="UTF-8">
+    <!-- VERY IMPORTANT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+      <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4f6f8;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 380px;   /* Desktop width */
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 16px; /* Prevent zoom on mobile */
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+  
+</head>
+<body>
+<h2>Treasure Hunt</h2>
+<p>Enter the password to reveal this clue</p>
+
+<form method="POST">
+  <input type="password" name="password" required>
+  <button type="submit">Reveal Clue</button>
+</form>
+</body>
+</html>
