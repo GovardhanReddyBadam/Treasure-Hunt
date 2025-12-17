@@ -1,8 +1,12 @@
 import qrcode
 
-BASE = "http://10.246.221.69:5000"
+# ✅ DEFINE BASE_URL FIRST
+BASE_URL = "https://treasure-hunt.onrender.com"
+# OR (for local testing)
+# BASE_URL = "http://127.0.0.1:5000"
 
 for i in range(1, 5):
-    qrcode.make(f"{BASE}/hunt/{i}").save(f"qr_{i}.png")
+    img = qrcode.make(f"{BASE_URL}/hunt/{i}")
+    img.save(f"qr_{i}.png")
 
-print("QRs created")
+print("QR codes generated successfully")
