@@ -1,70 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-      <meta charset="UTF-8">
-    <!-- VERY IMPORTANT -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-      <style>
-        * {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <title>Treasure Hunt Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f4f6f8;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 380px;   /* Desktop width */
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      padding: 20px;
+    }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .login-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 380px;
+      padding: 30px 25px;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
 
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            font-size: 16px; /* Prevent zoom on mobile */
-        }
+    .login-card h2 {
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+      color: #333;
+    }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            background: #007bff;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+    .login-card p {
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+      color: #666;
+    }
 
-        button:hover {
-            background: #0056b3;
-        }
-    </style>
-  
+    .login-card input {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .login-card input:focus {
+      border-color: #6a11cb;
+      box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.15);
+    }
+
+    .login-card button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .login-card button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .login-card button:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .login-card {
+        padding: 25px 20px;
+      }
+
+      .login-card h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
 </head>
-<body>
-<h2>Treasure Hunt</h2>
-<p>Enter the password to reveal this clue</p>
 
-<form method="POST">
-  <input type="password" name="password" required>
-  <button type="submit">Reveal Clue</button>
-</form>
+<body>
+  <form method="post" class="login-card">
+    <h2>🔐 Treasure Access</h2>
+    <p>Enter the secret key to unlock your next clue</p>
+
+    <input
+      type="password"
+      name="password"
+      placeholder="Enter password"
+      required
+    />
+
+    <button type="submit">Unlock Clue</button>
+  </form>
 </body>
 </html>

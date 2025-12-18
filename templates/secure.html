@@ -1,55 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- VERY IMPORTANT -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Secure Page</title>
+  <head>
+    <title>Clue Incoming</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
-        * {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #1d2671, #c33764);
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #ffffff;
+      }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #e8f0fe;
-        }
+      .card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        border-radius: 16px;
+        padding: 26px 22px 30px;
+        width: 95%;
+        max-width: 420px;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+      }
 
-        .container {
-            width: 100%;
-            max-width: 600px;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
+      h2 {
+        margin-bottom: 8px;
+        font-size: 26px;
+      }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 15px;
-        }
+      .question {
+        font-size: 18px;
+        white-space: pre-line;
+        margin: 16px 0 10px;
+        line-height: 1.5;
+      }
 
-        p {
-            text-align: center;
-            font-size: 16px;
+      .subtext {
+        font-size: 14px;
+        opacity: 0.8;
+        margin-bottom: 16px;
+      }
+
+      .timer {
+        font-size: 38px;
+        font-weight: 700;
+        margin: 20px 0;
+        color: #ffd369;
+        letter-spacing: 1px;
+      }
+
+      .clue {
+        display: none;
+        margin-top: 22px;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .clue img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 14px;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <div class="container">
-        <h2>🗺️ Clue Unlocked!</h2>
+  <body>
+    <div class="card">
+      <h2>🧭 Next Challenge</h2>
 
-        <img src="{{ url_for('static', filename=clue_image) }}" alt="Clue image">
+      <!-- QUESTION (TEXT FIRST) -->
+      <div class="question">{{ clue_text }}</div>
 
-        <p>{{ clue_text }}</p>
+      <div class="subtext">Clue image will unlock in 3 minutes</div>
+
+      <!-- TIMER (AUTO START) -->
+      <div id="timer" class="timer">03:00</div>
+
+      <!-- IMAGE CLUE (HIDDEN INITIALLY) -->
+      <div id="clue" class="clue">
+        <img
+          src="{{ url_for('static', filename=clue_image) }}"
+          alt="Clue image" />
+      </div>
     </div>
-</body>
+
+    <script>
+      let timeLeft = 120; // 3 minutes
+      const timerEl = document.getElementById("timer");
+      const clueEl = document.getElementById("clue");
+
+      const countdown = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+
+        timerEl.textContent =
+          String(minutes).padStart(2, "0") +
+          ":" +
+          String(seconds).padStart(2, "0");
+
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          timerEl.textContent = "CLUE UNLOCKED";
+          clueEl.style.display = "block";
+        }
+
+        timeLeft--;
+      }, 1000);
+    </script>
+  </body>
 </html>
