@@ -493,8 +493,10 @@ def clue(qr_id):
 # ✅ REQUIRED TO START SERVER
 if __name__ == "__main__":
     app.run(
-        host="127.0.0.1",
-        port=5000,
+        #Enter the host According to your network
+        host="*",
+        #Enter the port that given by the ngrok
+        port=*,
         debug=False,
         use_reloader=False
     )
