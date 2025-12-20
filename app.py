@@ -287,8 +287,87 @@ CLUES = {
     "70": {
         "text": "One step away to the Treasure '-_-'",
         "image": "clues/clue70.jpg"
+    },
+    "71": {
+        "text": "Find the next number 1,4,13,40,121,?",
+        "image": "clues/clue71.jpg"
+    },
+    "72": {
+        "text": "A shop gives a 20percent discount on a 450 rupees item. What is the price after discount?",
+        "image": "clues/clue72.jpg"
+    },
+    "73": {
+        "text": "Find the 25 percent of 360?",
+        "image": "clues/clue73.jpg"
+    },
+    "74": {
+        "text": "What is 3 ÷ 5 of 125?",
+        "image": "clues/clue74.jpg"
+    },
+    "75": {
+        "text": "45 ÷ 5 * 8 ?",
+        "image": "clues/clue75.jpg"
+    },
+    "76": {
+        "text": "Find the next number 1,4,13,40,121,?",
+        "image": "clues/clue76.jpg"
+    },
+    "77": {
+        "text": "A shop gives a 20percent discount on a 450 rupees item. What is the price after discount?",
+        "image": "clues/clue77.jpg"
+    },
+    "78": {
+        "text": "Find the 25 percent of 360?",
+        "image": "clues/clue78.jpg"
+    },
+    "79": {
+        "text": "What is 3 ÷ 5 of 125?",
+        "image": "clues/clue79.jpg"
+    },
+    "80": {
+        "text": "45 ÷ 5 * 8 ?",
+        "image": "clues/clue80.jpg"
+    },
+    "81": {
+        "text": "Find the next number 1,4,13,40,121,?",
+        "image": "clues/clue81.jpg"
+    },
+    "82": {
+        "text": "A shop gives a 20percent discount on a 450 rupees item. What is the price after discount?",
+        "image": "clues/clue82.jpg"
+    },
+    "83": {
+        "text": "Find the 25 percent of 360?",
+        "image": "clues/clue83.jpg"
+    },
+    "84": {
+        "text": "What is 3 ÷ 5 of 125?",
+        "image": "clues/clue84.jpg"
+    },
+    "85": {
+        "text": "45 ÷ 5 * 8 ?",
+        "image": "clues/clue85.jpg"
+    },
+    "86": {
+        "text": "Find the next number 1,4,13,40,121,?",
+        "image": "clues/clue86.jpg"
+    },
+    "87": {
+        "text": "A shop gives a 20percent discount on a 450 rupees item. What is the price after discount?",
+        "image": "clues/clue87.jpg"
+    },
+    "88": {
+        "text": "Find the 25 percent of 360?",
+        "image": "clues/clue88.jpg"
+    },
+    "89": {
+        "text": "What is 3 ÷ 5 of 125?",
+        "image": "clues/clue89.jpg"
+    },
+    "90": {
+        "text": "45 ÷ 5 * 8 ?",
+        "image": "clues/clue90.jpg"
     }
-    
 }
 
 # 🔐 Different password for each QR
@@ -362,7 +441,27 @@ PASSWORDS = {
     "67":"12",
     "68":"49",
     "69":"9",
-    "70":"99",    
+    "70":"99",
+    "71":"55",
+    "72":"50",
+    "73":"6",
+    "74":"343",
+    "75":"12",
+    "76":"5",
+    "77":"18",
+    "78":"7",
+    "79":"20",
+    "80":"4",
+    "81":"6",
+    "82":"30",
+    "83":"80",
+    "84":"12",
+    "85":"90",
+    "86":"54",
+    "87":"16",
+    "88":"15",
+    "89":"28",
+    "90":"70",        
     
 }
 
@@ -375,7 +474,7 @@ def hunt(qr_id):
         if request.form.get("password") == PASSWORDS[qr_id]:
             session[f"qr_{qr_id}"] = True
             return redirect(url_for("clue", qr_id=qr_id))
-        return "❌ Wrong password"
+        return "❌ Ee answer chusi calculator kuda silent ayyindhi!"
 
     return render_template("login.html")
 
