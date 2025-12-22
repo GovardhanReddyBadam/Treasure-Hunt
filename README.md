@@ -95,7 +95,7 @@ Password Qrs/
 
 ## 🧩 QR Code Generation
 
-- QR codes are generated in bulk (1–90)
+- QR codes are generated in bulk (1–70)
 - Each QR points to a unique URL
 - 5 rotating background color themes
 - Central math-themed logo embedded
