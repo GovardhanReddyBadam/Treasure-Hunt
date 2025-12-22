@@ -100,6 +100,7 @@ Password Qrs/
 - 5 rotating background color themes
 - Central math-themed logo embedded
 - High scannability ensured
+NOTE:ignore the QRs in the repository they are for only referential purpose generate your own QRs using ganerate_qr.py
 
 ---
 
