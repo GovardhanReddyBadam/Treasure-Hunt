@@ -54,16 +54,16 @@ It is designed as a **real-world, event-ready application**, not just a demo.
 ## 🏗️ Project Structure
 Password Qrs/
 │
-├── app.py # Main Flask application
-├── generate_qr.py # Script to generate QR codes
-├── templates/
-│ ├── login.html # Password input page
-│ └── secure.html # Clue display page
-├── static/
-│ └── clues/ # Clue images (local)
-├── requirements.txt
-├── .gitignore
+├── app.py # Main Flask application   
+├── generate_qr.py # Script to generate QR codes   
+├── templates/   
+│ ├── login.html # Password input page     
+├── static/   
+│ └── clues/ # Clue images (local)   
+├── requirements.txt   
+├── .gitignore   
 └── README.md
+
 
 
 ---
