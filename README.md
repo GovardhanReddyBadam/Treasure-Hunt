@@ -78,7 +78,7 @@ Password Qrs/
 4. On correct password:
    - A session is created
    - User is redirected to `/clue/<id>`
-5. Clue text is shown immediately  
+5. Question is shown immediately  
 6. Clue image (if any) is shown after a delay  
 7. User proceeds to the next location  
 
